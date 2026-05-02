@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "HKhhJyaqkA-m5QDa28pk9"
+uri = "file://artifacts/ppob-app/assets/images/icon.png"
+type = "image"
+title = "ppob app icon"
+
+[[generated]]
+id = "GTdMfa0PaiDtDF1muceAf"
+uri = "file://artifacts/ppob-app/assets/images/banner_promo.png"
+type = "image"
+title = "promo banner"
+
+[[generated]]
+id = "hvHywu86yu1kuQgHijOm_"
+uri = "file://artifacts/ppob-app/assets/images/success_illus.png"
+type = "image"
+title = "success illustration"

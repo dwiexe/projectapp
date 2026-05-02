@@ -1,0 +1,50 @@
+# compiled output
+dist
+build
+tmp
+out-tsc
+*.tsbuildinfo
+
+# environment variables (PENTING)
+.env
+.env.*
+
+# dependencies
+node_modules
+
+# logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# system
+.DS_Store
+Thumbs.db
+
+# Replit
+.cache/
+.local/
