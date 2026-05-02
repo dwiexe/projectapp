@@ -1,5 +1,4 @@
-cat << 'EOF' > README.md
-# ⚡ Digiflazz Pay Point (PPOB Mobile App)
+## ⚡ Digiflazz Pay Point (PPOB Mobile App)
 
 Aplikasi PPOB (Payment Point Online Bank) berbasis React Native (Expo) yang terintegrasi dengan API Digiflazz untuk transaksi pulsa, paket data, dan tagihan lainnya.
 
@@ -29,41 +28,62 @@ curl -fsSL [https://deb.nodesource.com/setup_18.x](https://deb.nodesource.com/se
 sudo apt install -y nodejs
 ```
 # Install PostgreSQL & Nginx
+```
 sudo apt install postgresql postgresql-contrib nginx -y
-
+```
 ##Pengaturan Database (PostgreSQL)
-Masuk ke sistem database: sudo -u postgres psql
+Masuk ke sistem database: 
+```
+sudo -u postgres psql
+```
 Lalu jalankan perintah SQL ini:
-
+```
 SQL
 CREATE DATABASE digiflazz_db;
 CREATE USER admin_ppob WITH PASSWORD 'password_rahasia_kamu';
 GRANT ALL PRIVILEGES ON DATABASE digiflazz_db TO admin_ppob;
 \q
-
+```
 ##Build & Jalankan API Server (Backend)
+```
 cd ~/Digiflazz-Pay-Point/artifacts/api-server
+```
+```
 npm install
+```
+```
 npm run build
+```
+```
 sudo npm install -g pm2
+```
+```
 pm2 start dist/index.js --name api-backend
+```
+```
 pm2 save && pm2 startup
-
+```
 ##Build APK Android (Frontend)
 ##Pastikan eas.json sudah mengarah ke IP/Domain VPS yang benar sebelum melakukan build.
 
-Bash
+```
 cd ~/Digiflazz-Pay-Point/artifacts/ppob-app
+```
+```
 npm install -g eas-cli
+```
+```
 npx eas login
+```
+```
 npx eas build -p android --profile preview
-
+```
 ##Pengaturan Domain via Nginx (Opsional)
-Bash
+```
 sudo nano /etc/nginx/sites-available/ppob
-
+```
 ##Isi konfigurasinya:
-
+```
 Nginx
 server {
     server_name api.dwizy22.my.id;
@@ -73,22 +93,14 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
     }
 }
-
+```
 ##Aktifkan:
 
-Bash
+```
 sudo ln -s /etc/nginx/sites-available/ppob /etc/nginx/sites-enabled/
+```
+```
 sudo systemctl restart nginx
-
+```
 📄 Lisensi
-Private Project - © 2026 Dwiexe.
-EOF
-git add README.md
-git commit -m "docs: menambahkan README super lengkap dengan panduan VPS"
-git push origin main
-
-
-**Catatan Penting saat Paste:**
-Kalau setelah di-*paste* baris terakhir (`git push origin main`) tidak langsung jalan otomatis, cukup tekan **Enter** sekali lagi ya boskuh. 
-
-Dan seperti biasa, siapkan Token PAT GitHub kamu kalau sistemnya meminta password di akhir proses. Gaskeun! 🚀🔥
+Private Project - © 2026 Dwiexe.EOF
