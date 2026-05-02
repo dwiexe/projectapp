@@ -31,12 +31,12 @@ sudo apt install -y nodejs
 ```
 sudo apt install postgresql postgresql-contrib nginx -y
 ```
-##Pengaturan Database (PostgreSQL)
+## Pengaturan Database (PostgreSQL)
 Masuk ke sistem database: 
 ```
 sudo -u postgres psql
 ```
-Lalu jalankan perintah SQL ini:
+## Lalu jalankan perintah SQL ini:
 ```
 SQL
 CREATE DATABASE digiflazz_db;
@@ -44,7 +44,7 @@ CREATE USER admin_ppob WITH PASSWORD 'password_rahasia_kamu';
 GRANT ALL PRIVILEGES ON DATABASE digiflazz_db TO admin_ppob;
 \q
 ```
-##Build & Jalankan API Server (Backend)
+## Build & Jalankan API Server (Backend)
 ```
 cd ~/Digiflazz-Pay-Point/artifacts/api-server
 ```
@@ -63,8 +63,8 @@ pm2 start dist/index.js --name api-backend
 ```
 pm2 save && pm2 startup
 ```
-##Build APK Android (Frontend)
-##Pastikan eas.json sudah mengarah ke IP/Domain VPS yang benar sebelum melakukan build.
+## Build APK Android (Frontend)
+## Pastikan eas.json sudah mengarah ke IP/Domain VPS yang benar sebelum melakukan build.
 
 ```
 cd ~/Digiflazz-Pay-Point/artifacts/ppob-app
@@ -78,11 +78,11 @@ npx eas login
 ```
 npx eas build -p android --profile preview
 ```
-##Pengaturan Domain via Nginx (Opsional)
+## Pengaturan Domain via Nginx (Opsional)
 ```
 sudo nano /etc/nginx/sites-available/ppob
 ```
-##Isi konfigurasinya:
+## Isi konfigurasinya:
 ```
 Nginx
 server {
@@ -94,7 +94,7 @@ server {
     }
 }
 ```
-##Aktifkan:
+## Aktifkan:
 
 ```
 sudo ln -s /etc/nginx/sites-available/ppob /etc/nginx/sites-enabled/
