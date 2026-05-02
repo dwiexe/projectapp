@@ -22,9 +22,12 @@ Panduan ini digunakan jika terjadi perpindahan server atau instalasi ulang VPS (
 ### 1. Persiapan Awal (Install Aplikasi Wajib)
 ```bash
 sudo apt update && sudo apt upgrade -y
+```
 # Install Node.js v18
+```
 curl -fsSL [https://deb.nodesource.com/setup_18.x](https://deb.nodesource.com/setup_18.x) | sudo -E bash -
 sudo apt install -y nodejs
+```
 # Install PostgreSQL & Nginx
 sudo apt install postgresql postgresql-contrib nginx -y
 
