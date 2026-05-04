@@ -18,7 +18,7 @@ Aplikasi PPOB (Payment Point Online Bank) berbasis React Native (Expo) yang teri
 
 Panduan ini digunakan jika terjadi perpindahan server atau instalasi ulang VPS (Ubuntu).
 
-### 1. Persiapan Awal (Install Aplikasi Wajib)
+### Persiapan Awal (Install Aplikasi Wajib)
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
